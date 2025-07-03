@@ -1,0 +1,190 @@
+body {
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: crosshair;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(60,60,120,0.12);
+    padding: 32px 24px;
+}
+
+h1 {
+    text-align: center;
+    color: #3b3b5c;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+
+#loginScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+#username {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #bdbdbd;
+    font-size: 1.1em;
+    width: 220px;
+}
+
+#startBtn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    background: #6366f1;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#startBtn:hover {
+    background: #4f46e5;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    justify-content: center;
+}
+
+.color-wheel {
+    margin: 10px;
+}
+
+.palette {
+    display: flex;
+    gap: 4px;
+}
+.palette-color {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #e5e7eb;
+    cursor: pointer;
+    outline: none;
+    transition: border 0.2s;
+}
+.palette-color:hover {
+    border: 2px solid #6366f1;
+}
+
+#brushType, #brushSize {
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #bdbdbd;
+    background: #f3f4f6;
+    font-size: 1em;
+}
+
+#brushSizeLabel {
+    min-width: 32px;
+    display: inline-block;
+    text-align: center;
+    color: #6366f1;
+    font-weight: bold;
+}
+
+#doneBtn, #downloadBtn, #resetBtn {
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: none;
+    background: #6366f1;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#doneBtn:hover, #downloadBtn:hover, #resetBtn:hover {
+    background: #4f46e5;
+}
+
+.canvas-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    aspect-ratio: 1 / 1;
+    background: #f3f4f6;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(60,60,120,0.08);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(60,60,120,0.04);
+    cursor: crosshair;
+}
+
+#usernamePopup {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    background: rgba(99,102,241,0.92);
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 16px;
+    font-size: 1.1em;
+    font-weight: bold;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 10;
+}
+
+#resultSection {
+    margin-top: 32px;
+    text-align: center;
+}
+
+#canvasResult {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(60,60,120,0.08);
+    margin-top: 12px;
+}
+
+@media (max-width: 700px) {
+    .container {
+        padding: 12px 4px;
+    }
+    .canvas-wrapper {
+        max-width: 98vw;
+    }
+    #canvasResult {
+        max-width: 98vw;
+    }
+}
