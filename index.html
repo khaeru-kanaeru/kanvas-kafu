@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KaFu Canvas</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>KaFu Canvas</h1>
+            <h2>Design by Futri x Eka</h2>
+        <div id="loginScreen">
+            <input type="text" id="username" placeholder="Enter your name" required>
+            <button id="startDrawingBtn">Start Drawing</button>
+        </div>
+        <div id="canvasSection" style="display: none;">
+            <div class="canvas-wrapper">
+                <canvas id="canvas" width="480" height="480"></canvas>
+                <div id="usernamePopup"></div>
+            </div>
+            <div class="controls">
+    <div class="color-brush-group">
+        <div class="color-picker-group">
+            <label class="color-label">🎨 Color</label>
+            <div class="quick-colors" id="quickColors">
+                <button class="quick-color" style="background:#000000;" data-color="#000000"></button>
+                <button class="quick-color" style="background:#ff0000;" data-color="#ff0000"></button>
+                <button class="quick-color" style="background:#00b894;" data-color="#00b894"></button>
+                <button class="quick-color" style="background:#0984e3;" data-color="#0984e3"></button>
+                <button class="quick-color" style="background:#fdcb6e;" data-color="#fdcb6e"></button>
+                <button class="quick-color" style="background:#e17055;" data-color="#e17055"></button>
+                <button class="quick-color" style="background:#fff;" data-color="#ffffff"></button>
+            </div>
+            <input type="color" id="colorPicker" value="#000000">
+        </div>
+        <div class="brush-picker-group">
+            <label class="brush-label">🖌️ Brush</label>
+            <div class="quick-brushes" id="quickBrushes">
+                <button class="quick-brush" data-brush="round" title="Round">
+                    <span style="font-size:1.3em;">●</span>
+                    <div class="brush-name">Round</div>
+                </button>
+                <button class="quick-brush" data-brush="square" title="Square">
+                    <span style="font-size:1.3em;">■</span>
+                    <div class="brush-name">Square</div>
+                </button>
+                <button class="quick-brush" data-brush="marker" title="Marker">
+                    <span style="font-size:1.3em;">🖊️</span>
+                    <div class="brush-name">Marker</div>
+                </button>
+                <button class="quick-brush" data-brush="spray" title="Spray">
+                    <span style="font-size:1.3em;">🖌️</span>
+                    <div class="brush-name">Spray</div>
+                </button>
+                <button class="quick-brush" data-brush="calligraphy" title="Calligraphy">
+                    <span style="font-size:1.3em;">✒️</span>
+                    <div class="brush-name">Calligraphy</div>
+                </button>
+                <button class="quick-brush eraser-brush" data-brush="eraser" title="Eraser">
+                    <span style="font-size:1.3em;">🧹</span>
+                    <div class="brush-name">Eraser</div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="brush-size-group">
+        <label for="brushSize" class="size-label">🪄 Size</label>
+        <div class="size-slider-wrap">
+            <input type="range" id="brushSize" min="1" max="100" value="5">
+            <span id="brushSizeValue">5</span>
+        </div>
+    </div>
+    <button id="doneBtn">Done</button>
+</div>
+            <div id="resultSection">
+                <h2>Canvas Result</h2>
+                <img id="canvasResult" alt="Canvas Result" />
+                <div class="result-buttons">
+                    <button id="downloadBtn">Download</button>
+                    <button id="resetBtn" style="display:none;">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/app.js"></script>
+    <script>
+        startDrawingBtn.addEventListener('click', () => {
+            canDraw = true;
+            startDrawingBtn.disabled = true;
+            loginScreen.style.display = 'none';
+            canvasSection.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
