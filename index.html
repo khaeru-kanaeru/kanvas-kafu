@@ -85,6 +85,11 @@
     </div>
     <script src="scripts/app.js"></script>
     <script>
+        const startDrawingBtn = document.getElementById('startDrawingBtn');
+        const loginScreen = document.getElementById('loginScreen');
+        const canvasSection = document.getElementById('canvasSection');
+        let canDraw = false;
+    
         startDrawingBtn.addEventListener('click', () => {
             canDraw = true;
             startDrawingBtn.disabled = true;
